@@ -1,0 +1,14 @@
+name: Sync Repo
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 2 * * 1-5"
+  
+jobs:
+  sync_repo_job:
+    name: Sync Repo Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run GitHub Repo Sync
+        run: gh repo sync
