@@ -9,6 +9,8 @@ jobs:
   sync_repo_job:
     name: Sync Repo Job
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Run GitHub Repo Sync
         run: gh repo sync
