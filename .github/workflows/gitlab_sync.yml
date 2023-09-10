@@ -14,9 +14,8 @@ jobs:
         fetch-depth: 0
     - name: Run GitLab Repo Sync
       run: |
-        env
-        echo "URL: ${{ env.GITLAB_URL }}"
-        git remote add target https://${{ env.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@${{ env.GITLAB_URL }}
+        echo "URL: ${{ vars.GITLAB_URL }}"
+        git remote add target https://${{ vars.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@${{ vars.GITLAB_URL }}
         case "${GITHUB_EVENT_NAME}" in
             push)
                 echo "pushing -f..."
